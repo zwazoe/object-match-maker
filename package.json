@@ -1,0 +1,32 @@
+{
+  "name": "object-match-maker",
+  "version": "2.0.0",
+  "description": "Create an object using data from two other objects. Get and update what you want.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "keywords": [
+    "object",
+    "array",
+    "object.entries",
+    "object.keys",
+    "keys",
+    "entries",
+    "deep",
+    "object",
+    "data", 
+    "compare",
+    "create",
+    "new", 
+    "bojects",
+    "arrays", 
+    "node", 
+    "react",
+    "angular", 
+    "vue", 
+    "module"
+  ],
+  "author": "Lesly Zwazoe Revenge",
+  "license": "ISC"
+}
