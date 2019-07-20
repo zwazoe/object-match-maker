@@ -28,5 +28,13 @@
     "module"
   ],
   "author": "Lesly Zwazoe Revenge",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwazoe/object-match-maker.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zwazoe/object-match-maker/issues"
+  },
+  "homepage": "https://github.com/zwazoe/object-match-maker#readme"
 }

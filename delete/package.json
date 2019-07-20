@@ -1,0 +1,19 @@
+{
+  "name": "delete",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwazoe/object-match-maker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zwazoe/object-match-maker/issues"
+  },
+  "homepage": "https://github.com/zwazoe/object-match-maker#readme"
+}
