@@ -1,4 +1,4 @@
-exports.ObjectMatchMaker = (obj = [{}, {}], output_type=2, get_values_from = 0, this_is_the_rest = 0, keys_to_add=[]) => {
+exports.ObjectMatchMaker = (obj = [{}, {}], output_type=2, get_values_from = 0, this_is_the_rest = 0, keys_to_update=[]) => {
 	// error handling to make sure the obj includes two objects.
 	if (Array.isArray(obj)) {
 		if (!obj[0]) {
@@ -35,7 +35,7 @@ exports.ObjectMatchMaker = (obj = [{}, {}], output_type=2, get_values_from = 0, 
 			// remove the new from objTwoKeys
 			// add the new
 			let entry_to_push = entry[1]
-			keys_to_add.map(key => {
+			keys_to_update.map(key => {
 				entry_to_push[key] = objTwokeys[entry[0]][key]
 			})
 			output[0].push(entry_to_push)
