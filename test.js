@@ -1,4 +1,4 @@
-const {ObjectMatchMaker} = require('./index');
+const {ObjectMatchMaker, omm} = require('./index');
 
 let a = {
     aa: {
@@ -56,11 +56,10 @@ let arg = process.argv.slice(2)[0]
 
 if(!arg){
     arg = 'test_51'
-    console.log('you must include test detail from test_1 to test_8. Do not forget the underscores. Therefore, I am outputing a test file but it is not the exact one you are looking for')
+    console.log('you must include test detail from test_1 to test_8. Do not forget the underscores. Therefore, I am outputting  a test file but it is not the exact one you are looking for')
 }
 
 ObjectMatchMaker(...object[arg]).then(res => {
     console.log(res, ' from ', arg)
 
 })
-
