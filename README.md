@@ -65,9 +65,9 @@ keys_to_update=[])
 ## Uses Cases
 Below, I will explain how to use each argument. 
 
-Object a and an object b have different first level keys. 
-Except for “ab”. There is a key “ab” on both objects. 
-Very important. Because, most of the use cases are going to show you how to use Object Oriented to help create a new object that updates ab.
+- Object a and an object b have different first level keys. 
+- Except for “ab”. There is a key “ab” on both objects. 
+- Very important. Because, most of the use cases are going to show you how to use Object Oriented to help create a new object that updates ab.
 
 ```
 
@@ -110,14 +110,14 @@ let b = {
 
 
 ## Case 1: argument 1, obj
-Imagine, object A was a newly created object. 
-object B was coming from  the database. 
-And you do not want to override what is already on the database. 
-You simply wanted to add the new data (a) to the existing data (b).
+>node test test_1
+- Imagine, object A was a newly created object. 
+- object B was coming from  the database. 
+- And you do not want to override what is already on the database. 
+- You simply wanted to add the new data (a) to the existing data (b).
 
 Here's the solution:
 
->From test script, run: node test test_1
 
 ```
 let c = ObjectMatchMaker([a,b])
@@ -135,17 +135,17 @@ output:
 
 ```
 ## case 2: argument 2, outputting an array only.
+> node test test_2
 
->Do not panic.
+Do not panic.
  
-You just output the solution as an object and as an array. 
-If you only want the object, you will simply add a second argument of 1 
-and if you wanted only the array, you will add a second parameter of 0
-. If you want both, you may leave it empty or add a second parameter of 2.
+- You just output the solution as an object and as an array. 
+- If you only want the object, you will simply add a second argument of 1 
+- and if you wanted only the array, you will add a second parameter of 0
+- If you want both, you may leave it empty or add a second parameter of 2.
 
 Let's run it again with a second argument of 0. This should output an array instead of array and object.
 
-> From test script, run: node test test_2
 ```
 
 let c = ObjectMatchMaker([a,b],0)
@@ -162,8 +162,8 @@ output:
 
 ## case 3: output an object only.
 >node test test_3
-Let's say you wanted to output an object instead of  an array. 
-You will simply add a second argument of 1. 
+- Let's say you wanted to output an object instead of  an array. 
+- You will simply add a second argument of 1. 
 
 
 
@@ -186,17 +186,17 @@ I implemented this feature because I found myself needing either an object or an
 
 ### Understanding the result
 
-The result, object c, should contain
-,ab from object b.
-,aa from object a
-,ac from object a
+- The result, object c, should contain
+- ab from object b.
+- aa from object a
+- ac from object a
 This is because object a is the new object and you may:
-Not want to override ab from object b.
-Object b may have additional information that object cannot pocess yet. 
-Such as created_at. 
-Or current_status. 
-Or view_count
-Etc. 
+- Not want to override ab from object b.
+- Object b may have additional information that object cannot pocess yet. 
+- Such as created_at. 
+- Or current_status. 
+- Or view_count
+- Etc. 
 
 However, overriding object b should be your choice. Not mine. Therefore, I have implemented ways to override values from an object. 
 
@@ -205,11 +205,11 @@ However, overriding object b should be your choice. Not mine. Therefore, I have 
 
 Now, lets say, you only wanted to update object b. And you do not want to add new keys to it. 
 
-This will mean that you will only take keys that match object a and object b. 
-The rest of the keys  from object that does not match object b will be disregarded. 
-Remember, before you have took from b and add to a. 
-This time, you will only take from a to update b.
-The rest of a, that does not match b,  should be set aside.
+- This will mean that you will only take keys that match object a and object b. 
+- The rest of the keys  from object that does not match object b will be disregarded. 
+- Remember, before you have took from b and add to a. 
+- This time, you will only take from a to update b.
+- The rest of a, that does not match b,  should be set aside.
 
 For this solution, you will have to add a third argument of 0 or 1. 
 
@@ -229,9 +229,9 @@ console.log(c)
 
 As you can see, ab is coming from object a. And ba, and bc is coming from object b. 
 
-This argument is called, get_values_from. 
-This is because we are getting values from B and we are updating B with object A. 
-and we are disregarding the keys that do not match B. 
+- This argument is called, get_values_from. 
+- This is because we are getting values from B and we are updating B with object A. 
+- and we are disregarding the keys that do not match B. 
 
 
 ## Case 5: get_values_from object a
@@ -239,9 +239,9 @@ and we are disregarding the keys that do not match B.
 
 Instead of getting values from b, you may want to get value from a. Therefore, you will turn the third argument into a 0, instead of 1
 
-Object-match-maker actually returned a promise. 
-Therefore, you can use "then" statement. 
-This will run, after your object has been resolved.
+- Object-match-maker actually returned a promise. 
+- Therefore, you can use "then" statement. 
+- This will run, after your object has been resolved.
 
 ```
 ObjectMatchMaker([a, b], 0,0).then(output => 
@@ -257,14 +257,14 @@ ObjectMatchMaker([a, b], 0,0).then(output =>
 
 
 
-### 6 this_is_the_rest
+## 6 this_is_the_rest
 From test script, run: node test test_6
 
-argument 4 is called, "this_is_the_rest" because it gets the rest of the keys, regardless if they matches. 
-But, you have to tell it, where to get the rest of the keys from. 
-Object a or b.
- based on the position of the first argument. 
-Therefore, you will enter a 0 or 1. 
+- argument 4 is called, "this_is_the_rest" because it gets the rest of the keys, regardless if they matches. 
+- But, you have to tell it, where to get the rest of the keys from. 
+- Object a or b.
+-  based on the position of the first argument. 
+- Therefore, you will enter a 0 or 1. 
 
 
 
@@ -279,22 +279,22 @@ ObjectMatchMaker([a, b], 1,0, 0).then(output =>
 
 ```
 
-In this instance, case 6 does not have a significant difference. 
-Because we are getting values from 0 and we want the rest of 0. 
-We already have the rest of 0. Because we are getting values from 0. 
-But, in case 7, you will see a big difference. 
+- In this instance, case 6 does not have a significant difference. 
+- Because we are getting values from 0 and we want the rest of 0. 
+- We already have the rest of 0. Because we are getting values from 0. 
+- But, in case 7, you will see a big difference. 
 
-### 7 this_is_the_rest
+## 7 this_is_the_rest
 >node test test_7
 
-If you wanted to get the key /value pair from object A, 
+ If you wanted to get the key /value pair from object A, 
 and get the rest of the values from B, 
 You will add a fourth argument of 1
 
 This make OMM very powerful. Here's why. 
-Imagine, object C is meant to include all of object A and all of Object B.
- But, you want object A to be updated with keys that match object B. 
-Hence., the existing data from the database will remain the same, but I want to add new data. 
+- Imagine, object C is meant to include all of object A and all of Object B.
+-  But, you want object A to be updated with keys that match object B. 
+- Hence., the existing data from the database will remain the same, but I want to add new data. 
 
 You can simply make object C includes data from A and B and update the data. let's run this. 
 
@@ -312,21 +312,21 @@ ObjectMatchMaker([a, b], 1,0, 1).then(output =>
 
   ```
 
-First, notice we have 5 keys and not 6. 
-That is because AB was updated. And it was updated by AB from object B. 
-And also notice that all of the keys are blend into 1. 
-This is because we are getting already getting all the values from object and we said, we also want values from object b. 
+- First, notice we have 5 keys and not 6. 
+- That is because AB was updated. And it was updated by AB from object B. 
+- And also notice that all of the keys are blend into 1. 
+- This is because we are getting already getting all the values from object and we said, we also want values from object b. 
 
 
-  ### 8 keys_to_update
+  ## 8 keys_to_update
 >node test test_8
 
-This is my favorite feature because we can update particular second level keys. 
- Let's say, you do not want to update everything that matches a and b. 
-You only wanted to update a few keys. 
-For example, lets say, I want to update a key called updated_at, product_status. 
-And every other 2nd level keys should not be updated. 
-In this case, you will add a fifth argument that contains an array of the keys that must be updated. 
+- This is my favorite feature because we can update particular second level keys. 
+ - Let's say, you do not want to update everything that matches a and b. 
+- You only wanted to update a few keys. 
+- For example, lets say, I want to update a key called updated_at, product_status. 
+- And every other 2nd level keys should not be updated. 
+- In this case, you will add a fifth argument that contains an array of the keys that must be updated. 
 
 
 ```
@@ -423,6 +423,8 @@ ObjectMatchMaker(...object[arg]).then(res => {
 
 # Change Log
 
+### 2.1.3
+- Added bullet list for readability
 ### 2.1.2 
 - include change log
 - update README.md, fix some grammar. 

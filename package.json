@@ -1,6 +1,6 @@
 {
   "name": "object-match-maker",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "Create an object using data from two other objects. Get and update what you want.",
   "main": "index.js",
   "scripts": {
